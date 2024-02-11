@@ -15,18 +15,17 @@ current_state = get_current_state()
 
 
 st.set_page_config(
-    page_title="Build a RAGs bot, powered by LlamaIndex",
+    page_title="Build a RAGs bot on telegram data, powered by LlamaIndex",
     page_icon="🦙",
     layout="centered",
     initial_sidebar_state="auto",
     menu_items=None,
 )
-st.title("Build a RAGs bot, powered by LlamaIndex 💬🦙")
+st.title("Build a RAGs bot on telegram data, 💬🦙")
 st.info(
-    "Use this page to build your RAG bot over your data! "
+    "provide the dataset file your have parsed for the given dataset "
     "Once the agent is finished creating, check out the `RAG Config` and "
-    "`Generated RAG Agent` pages.\n"
-    "To build a new agent, please make sure that 'Create a new agent' is selected.",
+    "`Generated RAG Agent` pages.\n",
     icon="ℹ️",
 )
 if "metaphor_key" in st.secrets:
@@ -43,8 +42,8 @@ st.info(f"Currently building/editing agent: {current_state.cache.agent_id}", ico
 selected = pills(
     "Outline your task!",
     [
-        "I want to analyze this PDF file (data/invoices.pdf)",
-        "I want to search over my CSV documents.",
+
+        "I want to search over my telegram data (data/) "
     ],
     clearable=True,
     index=None,
